@@ -13,7 +13,7 @@ class UserController extends BaseController {
 
     /**
      * 회원가입 처리
-     * 
+     *
      * @param string $userName  사용자 이름
      * @param string $email     이메일 주소
      * @param string $password  비밀번호
@@ -65,14 +65,43 @@ class UserController extends BaseController {
                 ->setStatusCode(201);
         }
 
-        // 저장 실패 원인 로깅
-        log_message('error', 'User register failed: ' . print_r($this->userModel->errors(), true));
-
         return $this->response
             ->setJSON([
                 'status' => 'error',
                 'message' => '회원가입 중 오류가 발생했습니다.',
             ])
             ->setStatusCode(500);
+    }
+
+    /**
+     * 회원 목록 조회
+     *
+     * @return \CodeIgniter\HTTP\Response
+     */
+    public function getUserList() {
+        $users = $this->userModel->getUserList();
+
+        return $this->response
+            ->setJSON([
+                'status' => 'success',
+                'data' => $users,
+            ])
+            ->setStatusCode(200);
+    }
+
+    /**
+     * 회원 상세 조회
+     *
+     * @return \CodeIgniter\HTTP\Response
+     */
+    function getUser($id = null) {
+        $user = $this->userModel->getUserByID($id);
+
+        return $this->response
+            ->setJSON([
+                'status' => 'success',
+                'data' => $user,
+            ])
+            ->setStatusCode(200);
     }
 }

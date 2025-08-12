@@ -31,4 +31,24 @@ class UserModel extends Model {
         }
         return $data;
     }
+
+    function __construct() {
+        $this->db = \Config\Database::connect();
+    }
+
+    public function getUserList() {
+        return $this->db
+            ->table($this->table)
+            ->select('id, email, user_name, bio, login_count, last_login_at, created_at, updated_at')
+            ->get()
+            ->getResultArray(); // 명시적으로 배열 반환
+    }
+
+    function getUserByID(int $id = null) {
+        $builder = $this->db->table('users');
+
+        $builder->select('id, email, user_name, bio, login_count, last_login_at, created_at, updated_at');
+        $builder->where('id', $id);
+        return $builder->get()->getRowObject();
+    }
 }
