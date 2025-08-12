@@ -26,6 +26,12 @@ abstract class BaseController extends Controller {
      * @var CLIRequest|IncomingRequest
      */
     protected $request;
+    protected function getBody() {
+        if (strpos($this->request->getHeaderLine('Content-Type'), 'application/json') !== false) {
+            return $this->request->getJSON(true);
+        }
+        return $this->request->getPost();
+    }
 
     /**
      * An array of helpers to be loaded automatically upon
