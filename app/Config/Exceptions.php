@@ -11,8 +11,7 @@ use Throwable;
 /**
  * Setup how the exception handler works.
  */
-class Exceptions extends BaseConfig
-{
+class Exceptions extends BaseConfig {
     /**
      * --------------------------------------------------------------------------
      * LOG EXCEPTIONS?
@@ -99,8 +98,7 @@ class Exceptions extends BaseConfig
      *          return new \App\Libraries\MyExceptionHandler();
      *      }
      */
-    public function handler(int $statusCode, Throwable $exception): ExceptionHandlerInterface
-    {
+    public function handler(int $statusCode, Throwable $exception): ExceptionHandlerInterface {
         return new ExceptionHandler($this);
     }
 }

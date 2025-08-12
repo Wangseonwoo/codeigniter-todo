@@ -9,8 +9,7 @@ use CodeIgniter\Config\BaseConfig;
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
  */
-class Cors extends BaseConfig
-{
+class Cors extends BaseConfig {
     /**
      * The default CORS configuration.
      *

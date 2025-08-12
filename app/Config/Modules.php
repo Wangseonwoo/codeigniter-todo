@@ -10,8 +10,7 @@ use CodeIgniter\Modules\Modules as BaseModules;
  * NOTE: This class is required prior to Autoloader instantiation,
  *       and does not extend BaseConfig.
  */
-class Modules extends BaseModules
-{
+class Modules extends BaseModules {
     /**
      * --------------------------------------------------------------------------
      * Enable Auto-Discovery?
@@ -72,11 +71,5 @@ class Modules extends BaseModules
      *
      * @var list<string>
      */
-    public $aliases = [
-        'events',
-        'filters',
-        'registrars',
-        'routes',
-        'services',
-    ];
+    public $aliases = ['events', 'filters', 'registrars', 'routes', 'services'];
 }

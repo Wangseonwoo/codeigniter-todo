@@ -7,8 +7,7 @@ use CodeIgniter\Config\BaseConfig;
 /**
  * Enable/disable backward compatibility breaking features.
  */
-class Feature extends BaseConfig
-{
+class Feature extends BaseConfig {
     /**
      * Use improved new auto routing instead of the legacy version.
      */
