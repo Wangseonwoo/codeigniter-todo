@@ -6,8 +6,7 @@ use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Log\Handlers\FileHandler;
 use CodeIgniter\Log\Handlers\HandlerInterface;
 
-class Logger extends BaseConfig
-{
+class Logger extends BaseConfig {
     /**
      * --------------------------------------------------------------------------
      * Error Logging Threshold
@@ -39,7 +38,7 @@ class Logger extends BaseConfig
      *
      * @var int|list<int>
      */
-    public $threshold = (ENVIRONMENT === 'production') ? 4 : 9;
+    public $threshold = ENVIRONMENT === 'production' ? 4 : 9;
 
     /**
      * --------------------------------------------------------------------------
@@ -84,16 +83,7 @@ class Logger extends BaseConfig
          */
         FileHandler::class => [
             // The log levels that this handler will handle.
-            'handles' => [
-                'critical',
-                'alert',
-                'emergency',
-                'debug',
-                'error',
-                'info',
-                'notice',
-                'warning',
-            ],
+            'handles' => ['critical', 'alert', 'emergency', 'debug', 'error', 'info', 'notice', 'warning'],
 
             /*
              * The default filename extension for log files.

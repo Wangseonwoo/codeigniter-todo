@@ -6,8 +6,7 @@ use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Images\Handlers\GDHandler;
 use CodeIgniter\Images\Handlers\ImageMagickHandler;
 
-class Images extends BaseConfig
-{
+class Images extends BaseConfig {
     /**
      * Default handler used if no other handler is specified.
      */
@@ -25,7 +24,7 @@ class Images extends BaseConfig
      * @var array<string, string>
      */
     public array $handlers = [
-        'gd'      => GDHandler::class,
+        'gd' => GDHandler::class,
         'imagick' => ImageMagickHandler::class,
     ];
 }

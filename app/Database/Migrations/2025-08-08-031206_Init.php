@@ -4,30 +4,28 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Init extends Migration
-{
- public function up()
-    {
+class Init extends Migration {
+    public function up() {
         /**
          * USERS TABLE
          */
         $this->forge->addField([
             'id' => [
-                'type'           => 'INT',
-                'unsigned'       => true,
+                'type' => 'INT',
+                'unsigned' => true,
                 'auto_increment' => true,
             ],
             'user_name' => [
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '50',
             ],
             'email' => [
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '100',
-                'unique'     => true,
+                'unique' => true,
             ],
             'password' => [
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
             'bio' => [
@@ -35,8 +33,8 @@ class Init extends Migration
                 'null' => true,
             ],
             'login_count' => [
-                'type'       => 'INT',
-                'default'    => 0,
+                'type' => 'INT',
+                'default' => 0,
             ],
             'last_login_at' => [
                 'type' => 'DATETIME',
@@ -57,18 +55,18 @@ class Init extends Migration
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('users');
-        
+
         /**
          * TAGS TABLE
          */
         $this->forge->addField([
             'id' => [
-                'type'           => 'INT',
-                'unsigned'       => true,
+                'type' => 'INT',
+                'unsigned' => true,
                 'auto_increment' => true,
             ],
             'tag_name' => [
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
             'created_at' => [
@@ -92,20 +90,20 @@ class Init extends Migration
          */
         $this->forge->addField([
             'id' => [
-                'type'           => 'INT',
-                'unsigned'       => true,
+                'type' => 'INT',
+                'unsigned' => true,
                 'auto_increment' => true,
             ],
             'user_id' => [
-                'type'     => 'INT',
+                'type' => 'INT',
                 'unsigned' => true,
             ],
             'tag_id' => [
-                'type'     => 'INT',
+                'type' => 'INT',
                 'unsigned' => true,
             ],
             'title' => [
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
             'description' => [
@@ -117,14 +115,14 @@ class Init extends Migration
                 'null' => true,
             ],
             'status' => [
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '255',
-                'default'    => 'pending',
+                'default' => 'pending',
             ],
             'color' => [
-                'type'       => 'VARCHAR',
+                'type' => 'VARCHAR',
                 'constraint' => '255',
-                'null'       => true,
+                'null' => true,
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -149,16 +147,16 @@ class Init extends Migration
          */
         $this->forge->addField([
             'id' => [
-                'type'           => 'INT',
-                'unsigned'       => true,
+                'type' => 'INT',
+                'unsigned' => true,
                 'auto_increment' => true,
             ],
             'follower_id' => [
-                'type'     => 'INT',
+                'type' => 'INT',
                 'unsigned' => true,
             ],
             'following_id' => [
-                'type'     => 'INT',
+                'type' => 'INT',
                 'unsigned' => true,
             ],
             'created_at' => [
@@ -180,13 +178,10 @@ class Init extends Migration
         $this->forge->createTable('follows');
     }
 
-    public function down()
-    {
+    public function down() {
         $this->forge->dropTable('follows', true);
         $this->forge->dropTable('tasks', true);
         $this->forge->dropTable('tags', true);
         $this->forge->dropTable('users', true);
     }
 }
-
-

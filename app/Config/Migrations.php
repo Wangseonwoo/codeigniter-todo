@@ -4,8 +4,7 @@ namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
 
-class Migrations extends BaseConfig
-{
+class Migrations extends BaseConfig {
     /**
      * --------------------------------------------------------------------------
      * Enable/Disable Migrations

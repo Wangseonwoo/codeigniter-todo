@@ -16,8 +16,7 @@ use CodeIgniter\Config\Routing as BaseRouting;
 /**
  * Routing configuration
  */
-class Routing extends BaseRouting
-{
+class Routing extends BaseRouting {
     /**
      * For Defined Routes.
      * An array of files that contain route definitions.
@@ -28,9 +27,7 @@ class Routing extends BaseRouting
      *
      * @var list<string>
      */
-    public array $routeFiles = [
-        APPPATH . 'Config/Routes.php',
-    ];
+    public array $routeFiles = [APPPATH . 'Config/Routes.php'];
 
     /**
      * For Defined Routes and Auto Routing.

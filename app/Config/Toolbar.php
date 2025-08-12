@@ -21,8 +21,7 @@ use CodeIgniter\Debug\Toolbar\Collectors\Views;
  * NOT be displayed under production environments, and will only display if
  * `CI_DEBUG` is true, since if it's not, there's not much to display anyway.
  */
-class Toolbar extends BaseConfig
-{
+class Toolbar extends BaseConfig {
     /**
      * --------------------------------------------------------------------------
      * Toolbar Collectors
@@ -102,9 +101,7 @@ class Toolbar extends BaseConfig
      *
      * @var list<string>
      */
-    public array $watchedDirectories = [
-        'app',
-    ];
+    public array $watchedDirectories = ['app'];
 
     /**
      * --------------------------------------------------------------------------
@@ -116,7 +113,5 @@ class Toolbar extends BaseConfig
      *
      * @var list<string>
      */
-    public array $watchedExtensions = [
-        'php', 'css', 'js', 'html', 'svg', 'json', 'env',
-    ];
+    public array $watchedExtensions = ['php', 'css', 'js', 'html', 'svg', 'json', 'env'];
 }

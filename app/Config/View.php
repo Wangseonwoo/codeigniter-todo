@@ -9,8 +9,7 @@ use CodeIgniter\View\ViewDecoratorInterface;
  * @phpstan-type parser_callable (callable(mixed): mixed)
  * @phpstan-type parser_callable_string (callable(mixed): mixed)&string
  */
-class View extends BaseView
-{
+class View extends BaseView {
     /**
      * When false, the view method will clear the data between each
      * call. This keeps your data safe and ensures there is no accidental
